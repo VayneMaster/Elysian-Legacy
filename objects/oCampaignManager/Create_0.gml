@@ -20,6 +20,9 @@ mission_duration_steps = 0;
 //current mission config (cache)
 mission_config = {};
 
+//default cutscene (safe)
+pending_cutscene_id = CutsceneID.INTRO;
+
 //if exist load save
 scr_load_campaign_progress();
 

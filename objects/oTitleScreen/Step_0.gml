@@ -60,6 +60,7 @@ if (select_pressed) {
             }
             
             // Play intro cutscene
+			show_debug_message("calling scr with INTRO");
             scr_play_cutscene(CutsceneID.INTRO);
             break;
             

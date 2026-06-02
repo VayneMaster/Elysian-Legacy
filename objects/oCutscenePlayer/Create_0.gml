@@ -1,5 +1,5 @@
 cutscene_id = -1;
-cutscene_config = {};
+cutscene_config = { scenes: [] }; //safe default
 
 current_scene_index = 0;
 scene_timer = 0;
@@ -11,7 +11,10 @@ fade_in = true;
 skippable = true;
 completed = false;
 
+//pull cutscene id from camp mngr
 if (instance_exists(oCampaignManager)) {
+	cutscene_id = oCampaignManager.pending_cutscene_id;
+	cutscene_config = scr_get_cutscene_config(cutscene_id);
 	oCampaignManager.mission_state = CampaignState.CUTSCENE_PLAYING;
 }
 

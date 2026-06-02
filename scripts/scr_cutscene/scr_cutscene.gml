@@ -349,11 +349,15 @@ function scr_get_cutscene_config(_cutscene_id){
 }
 
 function scr_play_cutscene(_cutscene_id) {
-	if (!instance_exists(oCutscenePlayer)) {
-		var player = instance_create_depth(0,0, -10000, oCutscenePlayer);
-		player.cutscene_id = _cutscene_id;
-		player.cutscene_config = scr_get_cutscene_config(_cutscene_id);
-		return player;
+	if (instance_exists(oCutscenePlayer)) return noone;
+	
+	//store on campmngr before room switch
+	if (instance_exists(oCampaignManager)) {
+		oCampaignManager.pending_cutscene_id = _cutscene_id;
 	}
+	
+	room_goto(rm_cutScene); //seitch to cutscene room
 	return noone;
 }
+
+

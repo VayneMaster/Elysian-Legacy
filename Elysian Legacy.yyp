@@ -67,9 +67,10 @@
     {"id":{"name":"oUnit_player_heavy_ranged","path":"objects/oUnit_player_heavy_ranged/oUnit_player_heavy_ranged.yy",},},
     {"id":{"name":"oUnit_player_ranged","path":"objects/oUnit_player_ranged/oUnit_player_ranged.yy",},},
     {"id":{"name":"oUnit_player","path":"objects/oUnit_player/oUnit_player.yy",},},
+    {"id":{"name":"rm_cutScene","path":"rooms/rm_cutScene/rm_cutScene.yy",},},
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"id":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"rm_missionSelect","path":"rooms/rm_missionSelect/rm_missionSelect.yy",},},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},},
     {"id":{"name":"scr_buy_turret","path":"scripts/scr_buy_turret/scr_buy_turret.yy",},},
     {"id":{"name":"scr_cutscene","path":"scripts/scr_cutscene/scr_cutscene.yy",},},
@@ -118,7 +119,8 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
     {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rm_cutScene","path":"rooms/rm_cutScene/rm_cutScene.yy",},},
+    {"roomId":{"name":"rm_missionSelect","path":"rooms/rm_missionSelect/rm_missionSelect.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

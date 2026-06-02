@@ -5,23 +5,19 @@ if (completed) {
 
 //get current scene
 if (current_scene_index >= array_length(cutscene_config.scenes)) {
-	completed = true;
-	
-	//Always back to mission select after cutscene
-	if (instance_exists(oCampaignManager)) {
-		if (cutscene_id == CutsceneID.ZEUS_WARNING) {
-			//last cutscene, camp completed
-			oCampaignManager.mission_state = CampaignState.CAMPAIGN_COMPLETE;
-		} else {
-			//reset state for next mission select
-			oCampaignManager.mission_state = CampaignState.NOT_STARTED;
-		}
-		//alwats back to mission lobby not setup properly yet!!
-		room_goto(rm_mainMenu); //testing
-	}
-	exit;
+    completed = true;
+    
+    if (instance_exists(oCampaignManager)) {
+        if (cutscene_id == CutsceneID.ZEUS_WARNING) {
+            oCampaignManager.mission_state = CampaignState.CAMPAIGN_COMPLETE;
+            room_goto(rm_mainMenu); // campaign done, back to main menu
+        } else {
+            oCampaignManager.mission_state = CampaignState.NOT_STARTED;
+            room_goto(rm_missionSelect); // go to mission select after every other cutscene
+        }
+    }
+    exit;
 }
-
 
 var scene = cutscene_config.scenes[current_scene_index];
 
