@@ -81,7 +81,7 @@ draw_set_alpha(0.6);
 draw_set_colour(c_white);
 draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
-draw_text(gw - 20, gh - 10, "v1.0.0 - Early Access");
+draw_text(gw - 20, gh - 10, "v0.0.1 - Early Access");
 
 //===============================================
 // CONTROLS HINT (BOTTOM LEFT)
