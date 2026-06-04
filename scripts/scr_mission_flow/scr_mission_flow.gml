@@ -9,7 +9,7 @@ function scr_dev_complete_mission(_mission_id){
 	}
 	for (var i = 0; i <= _mission_id; i++) {
 		oCampaignManager.mission_completed[i] = true;
-		if (oCampaignManage.mission_best_time[i] < 0) {
+		if (oCampaignManager.mission_best_time[i] < 0) {
 			oCampaignManager.mission_best_time[i] = 90 + irandom(60);
 		}
 	}
