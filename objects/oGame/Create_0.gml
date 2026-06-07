@@ -198,3 +198,11 @@ skill_branch[SkillID.E4] = SkillBranch.ELITE;
 window_set_size(1920, 1080);
 surface_resize(application_surface, 1920, 1080);
 display_set_gui_size(1920, 1080);
+
+//-------------
+//post mission stats
+stat_enemies_killed = 0;
+stat_units_deployed = 0;
+stat_units_lost = 0;
+stat_specials_used = 0;
+stat_mission_timer = 0;

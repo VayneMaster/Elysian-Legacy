@@ -46,6 +46,7 @@
     {"id":{"name":"oFPS_View","path":"objects/oFPS_View/oFPS_View.yy",},},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},},
     {"id":{"name":"oMenuPause","path":"objects/oMenuPause/oMenuPause.yy",},},
+    {"id":{"name":"oMissionResult","path":"objects/oMissionResult/oMissionResult.yy",},},
     {"id":{"name":"oMissionSelect","path":"objects/oMissionSelect/oMissionSelect.yy",},},
     {"id":{"name":"oParent_base","path":"objects/oParent_base/oParent_base.yy",},},
     {"id":{"name":"oParent_turret","path":"objects/oParent_turret/oParent_turret.yy",},},

@@ -32,5 +32,8 @@ function scr_spawn_player_unit(_lane, _type) {
     u.move_speed = stats.spd * 0.1; // Convert to pixels per step (15 spd = 1.5 pixels/step)
     u.attack_range = stats.rng;
     
+	
+	//stats tracking
+	stat_units_deployed++;
     return u;
 }

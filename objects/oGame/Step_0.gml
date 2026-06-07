@@ -48,6 +48,12 @@ if (game_state == GameState.PLAYING) {
     gold += gold_per_step;
 }
 
+//------------
+//mission timer (stat pnl)
+if (game_state == GameState.PLAYING) {
+	stat_mission_timer++;
+}
+
 // --------------------------------- 
 // Special ability cooldown
 if (special_cd_left > 0) {
@@ -62,6 +68,7 @@ if (special_cd_left > 0) {
 if (keyboard_check_pressed(vk_space) && ui_special_ready && game_state == GameState.PLAYING) {
     ui_special_ready = false;
     special_cd_left = special_cd_steps;
+	stat_specials_used++;
     // TODO: implement special effect
 }
 
@@ -88,10 +95,16 @@ if (enemy_spawn_timer >= enemy_spawn_interval) {
 // --------------------------------- 
 // Victory/defeat checks
 if (game_state == GameState.PLAYING) {
-    if (instance_exists(player_base) && player_base.hp <= 0)
+    if (instance_exists(player_base) && player_base.hp <= 0) {
         game_state = GameState.DEFEAT;
-    if (instance_exists(enemy_base) && enemy_base.hp <= 0)
+		var result = instance_create_depth(0,0, -15000, oMissionResult);
+		result.victory = false;
+		}
+    if (instance_exists(enemy_base) && enemy_base.hp <= 0) {
         game_state = GameState.VICTORY;
+		var result = instance_create_depth(0,0, -15000, oMissionResult)
+		result.victory = true;
+	}
 }
 
 // --------------------------------- 
@@ -122,6 +135,8 @@ if (game_state == GameState.PLAYING) {
         scr_spawn_cpu_unit(best_lane, spawn_type);
     }
 }
+
+//----------------------------- DEV BUTTONS
 if (keyboard_check_pressed(vk_f1)) {
     // Unlock all melee
     for (var i = SkillID.M1; i <= SkillID.M5; i++) {
@@ -139,6 +154,21 @@ if (keyboard_check_pressed(vk_f3)) {
     var s = scr_get_unit_stats_with_masteries(0);
     show_debug_message("HP: " + string(s.hp) + " DMG: " + string(s.dmg));
 }
+
+if (keyboard_check_pressed(vk_f4)) {
+    game_state = GameState.VICTORY;
+    var result = instance_create_depth(0, 0, -15000, oMissionResult);
+    result.victory = true;
+}
+
+if (keyboard_check_pressed(vk_f5)) {
+    game_state = GameState.DEFEAT;
+    var result = instance_create_depth(0, 0, -15000, oMissionResult);
+    result.victory = false;
+}
+
+//--------------------- END OF DEV BUTTONS
+
 // Track mastery changes for UI update
 if (!variable_instance_exists(id, "last_mastery_state")) {
     last_mastery_state = array_create(SKILL_COUNT, false);
