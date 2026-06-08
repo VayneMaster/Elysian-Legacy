@@ -47,7 +47,8 @@ function scr_buy_turret(_base, _turret_type) {
     var tx = _base.x + _base.turret_slot_dx[slot];
     var ty = _base.y + _base.turret_slot_dy[slot];
     
-    var t = instance_create_layer(tx, ty, "Instances", oParent_turret);
+	var obj = (_base.team == Team.PLAYER) ? oTurret_player : oTurret_enemy;
+    var t = instance_create_layer(tx, ty, "Instances", obj);
     t.owner_base = _base;
     t.owner_team = _base.team;
     t.slot_index = slot;
