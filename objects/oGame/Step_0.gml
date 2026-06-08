@@ -82,14 +82,16 @@ if (keyboard_check_pressed(ord("T"))) selected_type = 4;
 
 // --------------------------------- 
 // Enemy spawn timer
-enemy_spawn_timer++;
-if (enemy_spawn_timer >= enemy_spawn_interval) {
-    enemy_spawn_timer = 0;
-    var lane = irandom(lane_count - 1);
-    var lane_y_pos = lane_y[lane];
-    var u = instance_create_layer(room_width - 200, lane_y_pos, "Instances", oUnit_enemy);
-    u.lane_index = lane;
-    u.y = lane_y_pos;
+if (game_state == GameState.PLAYING) {
+    enemy_spawn_timer++;
+    if (enemy_spawn_timer >= enemy_spawn_interval) {
+        enemy_spawn_timer = 0;
+        var lane = irandom(lane_count - 1);
+        var lane_y_pos = lane_y[lane];
+        var u = instance_create_layer(room_width - 200, lane_y_pos, "Instances", oUnit_enemy);
+        u.lane_index = lane;
+        u.y = lane_y_pos;
+    }
 }
 
 // --------------------------------- 
@@ -99,8 +101,7 @@ if (game_state == GameState.PLAYING) {
         game_state = GameState.DEFEAT;
 		var result = instance_create_depth(0,0, -15000, oMissionResult);
 		result.victory = false;
-		}
-    if (instance_exists(enemy_base) && enemy_base.hp <= 0) {
+		} else if (instance_exists(enemy_base) && enemy_base.hp <= 0) {
         game_state = GameState.VICTORY;
 		var result = instance_create_depth(0,0, -15000, oMissionResult)
 		result.victory = true;
@@ -155,13 +156,12 @@ if (keyboard_check_pressed(vk_f3)) {
     show_debug_message("HP: " + string(s.hp) + " DMG: " + string(s.dmg));
 }
 
-if (keyboard_check_pressed(vk_f4)) {
+if (keyboard_check_pressed(vk_f4) && !instance_exists(oMissionResult)) {
     game_state = GameState.VICTORY;
     var result = instance_create_depth(0, 0, -15000, oMissionResult);
     result.victory = true;
 }
-
-if (keyboard_check_pressed(vk_f5)) {
+if (keyboard_check_pressed(vk_f5) && !instance_exists(oMissionResult)) {
     game_state = GameState.DEFEAT;
     var result = instance_create_depth(0, 0, -15000, oMissionResult);
     result.victory = false;

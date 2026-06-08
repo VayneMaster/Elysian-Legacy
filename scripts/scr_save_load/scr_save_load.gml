@@ -90,8 +90,8 @@ function scr_load_campaign_progress(){
 	//load camp progress
 	if (instance_exists(oCampaignManager)) {
 		oCampaignManager.current_mission = ds_map_find_value(save_data, "current_mission");
-		oCampaignManager.total_mission_completed = ds_map_find_value(save_data, "total_missions_completed");
-		oCampaignManager.campaign_total_time = ds_map_find_value(save_data, "campaign_total_timer");
+		oCampaignManager.total_mission_completed = ds_map_find_value(save_data, "total_mission_completed");
+		oCampaignManager.campaign_total_time = ds_map_find_value(save_data, "campaign_total_time");
 		
 		//mission completion
 		var mission_completion_list = ds_map_find_value(save_data, "mission_completed");

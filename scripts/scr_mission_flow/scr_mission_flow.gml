@@ -33,7 +33,7 @@ function scr_dev_complete_mission(_mission_id){
 function scr_on_mission_complete() {
 	if (!instance_exists(oCampaignManager)) return;
 	
-	var mid = oCampaignManage.current_mission;
+	var mid = oCampaignManager.current_mission;
 	if (mid < 0 || mid >= MissionID.COUNT) return;
 	
 	var cfg = scr_get_mission_config(mid);
@@ -49,8 +49,12 @@ function scr_on_mission_complete() {
 	
 	oCampaignManager.total_skill_points_earned += cfg.skill_points_reward;
 	
+	if (instance_exists(oGame)) {
+    scr_award_skill_points(cfg.skill_points_reward);
+	}
+
 	show_debug_message("Mission complete: " + cfg.name + " | nxt cutscene: " + string(cfg.next_cutscene));
-	
+	scr_save_campaign_progress();
 	if (cfg.next_cutscene >= 0 && cfg.next_cutscene < CutsceneID.COUNT) {
 		scr_play_cutscene(cfg.next_cutscene);
 	} else {

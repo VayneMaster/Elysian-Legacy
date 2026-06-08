@@ -15,7 +15,7 @@ if (instance_exists(oGame)) {
 	units_deployed = oGame.stat_units_deployed;
 	units_lost = oGame.stat_units_lost;
 	specials_used = oGame.stat_specials_used;
-	missions_secs = oGame.stat_mission_timer / TARGET_FPS;
+	mission_secs = oGame.stat_mission_timer / TARGET_FPS;
 }
 
 if (instance_exists(oCampaignManager)) {
