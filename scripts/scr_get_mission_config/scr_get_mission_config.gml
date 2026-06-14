@@ -1,6 +1,9 @@
 // @description Get mission configuration
 /// @param mission_id The mission ID to get config for
 function scr_get_mission_config(_mission_id) {
+	if (variable_global_exists("mission_cfg_cache") && _mission_id >= 0 && _mission_id < array_length(global.mission_cfg_cache)) {
+        return global.mission_cfg_cache[_mission_id];
+		}
     var config = {};
     
     switch (_mission_id) {

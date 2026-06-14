@@ -7,6 +7,12 @@ mission_state = CampaignState.NOT_STARTED;
 mission_completed = array_create(MissionID.COUNT, false);
 mission_best_time = array_create(MissionID.COUNT, -1);
 
+//config cache
+global.mission_cfg_cache = [];
+for (var i = 0; i < MissionID.COUNT; i++) {
+    global.mission_cfg_cache[i] = scr_get_mission_config(i);
+}
+
 //campaign stats
 total_skill_points_earned = SKILL_POINTS_START;
 total_mission_completed = 0;
