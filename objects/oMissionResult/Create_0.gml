@@ -31,6 +31,7 @@ panel_h = 560;
 panel_x = (gui_w - panel_w) * 0.5;
 panel_y = (gui_h - panel_h) * 0.5;
 
+
 // Stats to display can add more entries here later without breaking layout
 // Format: [label, player_value_string]
 // Keep it even numbers for clean two-column layout

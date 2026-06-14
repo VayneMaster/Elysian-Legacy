@@ -29,6 +29,7 @@ draw_rectangle(panel_x, panel_y, panel_x + panel_w, panel_y + panel_h, false);
 draw_set_colour(c_border);
 draw_rectangle(panel_x, panel_y, panel_x + panel_w, panel_y + panel_h, true);
 
+
 // Gold top accent
 draw_set_colour(c_gold);
 draw_line(panel_x + 2, panel_y, panel_x + panel_w - 2, panel_y);
@@ -67,6 +68,7 @@ var table_top   = panel_y + 78;
 var row_h       = 44;
 var label_cx    = panel_x + panel_w * 0.5; // center label
 var value_x     = panel_x + panel_w - 100; // right-aligned value
+var value_x_e	= panel_x + 100;
 
 // Column headers
 draw_set_colour(c_gold_dim);
@@ -75,6 +77,8 @@ draw_set_valign(fa_top);
 draw_text_transformed(label_cx, table_top, "STAT", 1.0, 1.0, 0);
 draw_set_halign(fa_right);
 draw_text_transformed(value_x, table_top, "YOU", 1.0, 1.0, 0);
+draw_set_halign(fa_left);
+draw_text_transformed(value_x_e, table_top, "ENEMY", 1.0, 1.0, 0);
 
 // Header underline
 draw_set_colour(c_bronze);
