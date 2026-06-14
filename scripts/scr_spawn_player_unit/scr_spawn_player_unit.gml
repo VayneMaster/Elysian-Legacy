@@ -35,5 +35,6 @@ function scr_spawn_player_unit(_lane, _type) {
 	
 	//stats tracking
 	oGame.stat_units_deployed++;
+	
     return u;
 }

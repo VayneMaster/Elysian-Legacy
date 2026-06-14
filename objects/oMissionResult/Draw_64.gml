@@ -104,10 +104,15 @@ for (var i = 0; i < stat_count; i++) {
     draw_set_valign(fa_middle);
     draw_text(label_cx, ry + (row_h - 8) * 0.5, stat_labels[i]);
 
-    // Value — right side, gold colored
+    // Value — right side
     draw_set_colour(c_gold);
     draw_set_halign(fa_right);
     draw_text_transformed(value_x, ry + (row_h - 8) * 0.5 - 6, stat_values[i], 1.3, 1.3, 0);
+	
+	//value - left side
+	draw_set_colour(c_gold);
+	draw_set_halign(fa_left);
+	draw_text_transformed(value_x_e, ry + (row_h - 8) * 0.5 - 6, stat_e_values[i], 1.3, 1.3, 0);
 }
 
 // ---- Divider ----

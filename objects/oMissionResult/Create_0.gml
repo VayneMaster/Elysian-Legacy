@@ -8,6 +8,7 @@ units_lost = 0;
 specials_used = 0;
 mission_secs = 0;
 skill_pts = 0;
+unit_enemies_deployed = 0;
 victory = true; //set through ogame
 
 if (instance_exists(oGame)) { 
@@ -15,6 +16,7 @@ if (instance_exists(oGame)) {
 	units_deployed = oGame.stat_units_deployed;
 	units_lost = oGame.stat_units_lost;
 	specials_used = oGame.stat_specials_used;
+	unit_enemies_deployed = oGame.stat_e_unit_deployed;
 	mission_secs = oGame.stat_mission_timer / TARGET_FPS;
 }
 
@@ -46,6 +48,13 @@ stat_values = [
     string(units_deployed),
     string(units_lost),
     string(specials_used)
+];
+
+stat_e_values = [
+	string(units_lost),
+	string(unit_enemies_deployed),
+	string(enemies_killed),
+	"-"
 ];
 stat_count = array_length(stat_labels);
 

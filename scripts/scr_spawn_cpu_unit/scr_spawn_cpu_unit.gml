@@ -25,5 +25,6 @@ function scr_spawn_cpu_unit(_lane, _type) {
     u.lane_index = _lane;
     u.y = lane_y_pos;
     
+	oGame.stat_e_unit_deployed++;
     return u;
 }
