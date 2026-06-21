@@ -13,6 +13,7 @@ function scr_get_mission_config(_mission_id) {
             config.objective_type = ObjectiveType.DESTROY_ENEMY_BASE;
             config.tech_era = TechEra.STONE_AGE;
             config.enemy_tech_era = TechEra.GREEK_CLASSICAL;
+			config.cpu_special = SpecialID.SPEARS;
             config.starting_gold = 500;
             config.gold_per_second = 30;
             config.enemy_gold_multiplier = 0.9; // Make mission 1 bit easier
@@ -29,6 +30,7 @@ function scr_get_mission_config(_mission_id) {
             config.objective_type = ObjectiveType.DESTROY_ENEMY_BASE;
             config.tech_era = TechEra.IRON_AGE;
             config.enemy_tech_era = TechEra.IRON_AGE;
+			config.cpu_special = SpecialID.IRON;
             config.starting_gold = 600;
             config.gold_per_second = 35;
             config.enemy_gold_multiplier = 1.0;
@@ -45,6 +47,7 @@ function scr_get_mission_config(_mission_id) {
             config.objective_type = ObjectiveType.LOSE_INTENTIONALLY;
             config.tech_era = TechEra.GREEK_CLASSICAL;
             config.enemy_tech_era = TechEra.MODERN;
+			config.cpu_special = SpecialID.MODERN;
             config.starting_gold = 800;
             config.gold_per_second = 40;
             config.enemy_gold_multiplier = 1.8; // Overwhelming force
@@ -61,6 +64,7 @@ function scr_get_mission_config(_mission_id) {
             config.objective_type = ObjectiveType.DESTROY_ENEMY_BASE;
             config.tech_era = TechEra.MODERN;
             config.enemy_tech_era = TechEra.MODERN;
+			config.cpu_special = SpecialID.MODERN;
             config.starting_gold = 1000;
             config.gold_per_second = 45;
             config.enemy_gold_multiplier = 1.1;
@@ -77,6 +81,7 @@ function scr_get_mission_config(_mission_id) {
             config.objective_type = ObjectiveType.SURVIVE_TIME;
             config.tech_era = TechEra.MODERN;
             config.enemy_tech_era = TechEra.MODERN;
+			config.cpu_special = SpecialID.LASER;
             config.starting_gold = 1200;
             config.gold_per_second = 50;
             config.enemy_gold_multiplier = 1.3;
@@ -93,6 +98,7 @@ function scr_get_mission_config(_mission_id) {
             config.objective_type = ObjectiveType.DEFEAT_BOSS;
             config.tech_era = TechEra.ADVANCED;
             config.enemy_tech_era = TechEra.MYTHOLOGICAL;
+			config.cpu_special = SpecialID.LIGHTNING;
             config.starting_gold = 1500;
             config.gold_per_second = 60;
             config.enemy_gold_multiplier = 1.5;

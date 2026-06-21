@@ -60,6 +60,17 @@ enum SkillID {
     E4 = 13
 }
 
+//SPECIALS
+enum SpecialID {
+    ROCKS,
+    SPEARS,
+    IRON,
+    MODERN,
+    LASER,
+    LIGHTNING,
+    COUNT
+}
+
 //pause pages
 enum PausePage {
 	MAIN = 0,
@@ -68,7 +79,6 @@ enum PausePage {
 	CONFIRM_MENU = 3,
 	CONFIRM_DESKTOP = 4,
 	CONFIRM_RESTART = 5
-
 }
 
 //build mode tab

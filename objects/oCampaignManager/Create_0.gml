@@ -6,6 +6,7 @@ mission_state = CampaignState.NOT_STARTED;
 //tracking
 mission_completed = array_create(MissionID.COUNT, false);
 mission_best_time = array_create(MissionID.COUNT, -1);
+special_unlocked = array_create(SpecialID.COUNT, false);
 
 //config cache
 global.mission_cfg_cache = [];

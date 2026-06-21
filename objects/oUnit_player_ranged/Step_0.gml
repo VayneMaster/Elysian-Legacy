@@ -1,5 +1,8 @@
 //Death
 if (hp <= 0) {
+    if (instance_exists(oGame)) {
+        oGame.stat_units_lost++;
+    }
     instance_destroy();
     exit;
 }
