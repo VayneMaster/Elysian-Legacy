@@ -19,6 +19,11 @@ if (confirm_open) {
 	if (mouse_check_button_pressed(mb_left)) {
 		if (point_in_rectangle(mx, my, yes_x1, yes_y1, yes_x2, yes_y2)) {
 			if (instance_exists(oCampaignManager)) {
+				
+				var special_unlock = scr_get_mission_config(confirm_mission).player_unlock;
+				if (special_unlock >= 0) {
+					oCampaignManager.special_unlocked[special_unlock] = true;
+				}
 				oCampaignManager.current_mission = confirm_mission;
 				oCampaignManager.mission_state = CampaignState.IN_PROGRESS;
 				oCampaignManager.mission_config = scr_get_mission_config(confirm_mission);

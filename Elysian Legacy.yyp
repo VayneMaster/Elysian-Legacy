@@ -77,6 +77,7 @@
     {"id":{"name":"scr_buy_turret","path":"scripts/scr_buy_turret/scr_buy_turret.yy",},},
     {"id":{"name":"scr_cutscene","path":"scripts/scr_cutscene/scr_cutscene.yy",},},
     {"id":{"name":"scr_get_mission_config","path":"scripts/scr_get_mission_config/scr_get_mission_config.yy",},},
+    {"id":{"name":"scr_get_special_config","path":"scripts/scr_get_special_config/scr_get_special_config.yy",},},
     {"id":{"name":"scr_masteries","path":"scripts/scr_masteries/scr_masteries.yy",},},
     {"id":{"name":"scr_mission_flow","path":"scripts/scr_mission_flow/scr_mission_flow.yy",},},
     {"id":{"name":"scr_save_load","path":"scripts/scr_save_load/scr_save_load.yy",},},
