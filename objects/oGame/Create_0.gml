@@ -77,11 +77,15 @@ selected_turret = turret_type[0];
 build_tab = BuildTab.UNITS;
 
 //-------------------------------------------------- 
+player_unit_count = 0;
 // SPECIAL ABILITY
 ui_special_ready = true;
 special_cd_steps = TARGET_FPS * 30; //30 sec
 special_cd_left = 0;
-
+active_special = SpecialID.ROCKS;
+// SPECIAL ABILITY ENEMY
+enemy_special_cd_steps = 0; 
+enemy_special_cd_left = 0;
 //-------------------------------------------------- 
 // LANE POSITIONS (for UI lane preview)
 var battlefield_h = room_height - 190; // ui_bar_h

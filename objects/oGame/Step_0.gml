@@ -64,12 +64,48 @@ if (special_cd_left > 0) {
     }
 }
 
+//count player units
+player_unit_count = 0;
+with (oParent_unit) {
+    if (team == Team.PLAYER) {
+        oGame.player_unit_count++;
+    }
+}
+
+//enemy spec fire when "worthwile"
+if (enemy_special_cd_left <= 0 && player_unit_count >= 3 && game_state == GameState.PLAYING) {
+	var enemy_spc = scr_get_special_config(oCampaignManager.mission_config.cpu_special);
+	var enemy_dmg = enemy_spc.damage;
+	enemy_special_cd_left = enemy_spc.cooldown * TARGET_FPS;
+	//TODO tracking enemyt spec
+	with (oParent_unit) {
+		if (team == Team.PLAYER) {
+			last_hit_team = Team.ENEMY;
+			hp -= enemy_dmg;
+		}
+	}
+}
+//enemy spec abil
+if (enemy_special_cd_left > 0) {
+	enemy_special_cd_left--;
+}
+
+
 // Trigger special (Space key)
 if (keyboard_check_pressed(vk_space) && ui_special_ready && game_state == GameState.PLAYING) {
-    ui_special_ready = false;
-    special_cd_left = special_cd_steps;
+    var spc = scr_get_special_config(active_special);
+	var dmg = spc.damage
+	
+	ui_special_ready = false;
+	special_cd_left = spc.cooldown * TARGET_FPS;
 	stat_specials_used++;
-    // TODO: implement special effect
+	
+	with (oParent_unit) {
+		if (team == Team.ENEMY) {
+			last_hit_team = Team.PLAYER;
+			hp -= dmg;
+		}
+	}
 }
 
 // --------------------------------- 
