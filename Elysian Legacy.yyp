@@ -90,6 +90,8 @@
     {"id":{"name":"scr_turret_stats","path":"scripts/scr_turret_stats/scr_turret_stats.yy",},},
     {"id":{"name":"scr_unit_behaviour","path":"scripts/scr_unit_behaviour/scr_unit_behaviour.yy",},},
     {"id":{"name":"sBackground","path":"sprites/sBackground/sBackground.yy",},},
+    {"id":{"name":"sBG_Mission1","path":"sprites/sBG_Mission1/sBG_Mission1.yy",},},
+    {"id":{"name":"sBG_Mission2","path":"sprites/sBG_Mission2/sBG_Mission2.yy",},},
     {"id":{"name":"sEnemy_elite","path":"sprites/sEnemy_elite/sEnemy_elite.yy",},},
     {"id":{"name":"sEnemy_hvy_mle","path":"sprites/sEnemy_hvy_mle/sEnemy_hvy_mle.yy",},},
     {"id":{"name":"sEnemy_hvy_rng","path":"sprites/sEnemy_hvy_rng/sEnemy_hvy_rng.yy",},},

@@ -43,7 +43,7 @@ for (var i = 0; i < MissionID.COUNT; i++) {
 //interaction
 selected_mission = 0;
 hovered_node = -1;
-
+current_map_mission = 0;
 //upgrade scroll
 upgrade_scroll = 0;
 

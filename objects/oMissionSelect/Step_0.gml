@@ -126,3 +126,12 @@ if (mouse_check_button_pressed(mb_left)
     && point_in_rectangle(mx, my, menu_x1, menu_y1, menu_x2, menu_y2)) {
     room_goto(rm_mainMenu);
 }
+
+//determine 1st mssion
+current_map_mission = 0;
+for (var i = 0; i < MissionID.COUNT; i++) {
+	if (instance_exists(oCampaignManager) && !oCampaignManager.mission_completed[i]) {
+	current_map_mission = i;
+	break;
+	}
+}

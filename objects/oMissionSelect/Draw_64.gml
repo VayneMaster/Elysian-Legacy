@@ -35,6 +35,15 @@ var rv = 7; // rivet radius
 // MAP PANEL
 draw_set_colour(c_panel);
 draw_rectangle(map_x, map_y, map_x + map_w, map_y + map_h, false);
+
+//mission bg
+var map_bg = -1;
+if (current_map_mission == 0) map_bg = sBG_Mission1;
+if (current_map_mission == 1) map_bg = sBG_Mission2;
+if (map_bg != -1) {
+	draw_sprite_stretched(map_bg, 0, map_x, map_y, map_w, map_h)
+}
+
 draw_set_colour(c_border);
 draw_rectangle(map_x, map_y, map_x + map_w, map_y + map_h, true);
 
