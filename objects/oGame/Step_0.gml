@@ -77,7 +77,7 @@ if (enemy_special_cd_left <= 0 && player_unit_count >= 3 && game_state == GameSt
 	var enemy_spc = scr_get_special_config(oCampaignManager.mission_config.cpu_special);
 	var enemy_dmg = enemy_spc.damage;
 	enemy_special_cd_left = enemy_spc.cooldown * TARGET_FPS;
-	//TODO tracking enemyt spec
+	stat_enemy_specials_used++;
 	with (oParent_unit) {
 		if (team == Team.PLAYER) {
 			last_hit_team = Team.ENEMY;

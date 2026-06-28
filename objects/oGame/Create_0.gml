@@ -212,5 +212,7 @@ stat_specials_used = 0;
 stat_mission_timer = 0;
 
 
+
 //post mission stats enemy
 stat_e_unit_deployed = 0;
+stat_enemy_specials_used = 0;
