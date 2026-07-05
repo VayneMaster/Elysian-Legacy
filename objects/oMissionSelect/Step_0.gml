@@ -63,17 +63,8 @@ if (mouse_check_button_pressed(mb_left)) {
 }
 
 
-//timeline node hovr click
-hovered_node = -1;
-for (var i = 0; i < MissionID.COUNT; i++) {
-    if (point_distance(mx, my, node_x[i], node_y[i]) <= node_r + 10) {
-        hovered_node = i;
-        if (mouse_check_button_pressed(mb_left)) {
-            selected_mission = i;
-        }
-        break;
-    }
-}
+//mission lock
+selected_mission = current_map_mission;
 
 // Upgrade panel scroll
 if (point_in_rectangle(mx, my, upgrade_x, upgrade_y, upgrade_x + upgrade_w, upgrade_y + upgrade_h)) {
