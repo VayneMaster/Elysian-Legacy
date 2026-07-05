@@ -132,16 +132,26 @@ if (game_state == GameState.PLAYING) {
 
 // --------------------------------- 
 // Victory/defeat checks
+var obj_type = ObjectiveType.DESTROY_ENEMY_BASE; // default fallback
+if (instance_exists(oCampaignManager)) {
+    obj_type = oCampaignManager.mission_config.objective_type;
+}
+
 if (game_state == GameState.PLAYING) {
+    // Losing base ends any mission
     if (instance_exists(player_base) && player_base.hp <= 0) {
         game_state = GameState.DEFEAT;
-		var result = instance_create_depth(0,0, -15000, oMissionResult);
-		result.victory = false;
-		} else if (instance_exists(enemy_base) && enemy_base.hp <= 0) {
-        game_state = GameState.VICTORY;
-		var result = instance_create_depth(0,0, -15000, oMissionResult)
-		result.victory = true;
-	}
+        var result = instance_create_depth(0, 0, -15000, oMissionResult);
+        result.victory = false;
+    }
+    // Victory condition depends on the objective
+    else if (obj_type == ObjectiveType.DESTROY_ENEMY_BASE || obj_type == ObjectiveType.DEFEAT_BOSS) {
+        if (instance_exists(enemy_base) && enemy_base.hp <= 0) {
+            game_state = GameState.VICTORY;
+            var result = instance_create_depth(0, 0, -15000, oMissionResult);
+            result.victory = true;
+        }
+    }
 }
 
 // --------------------------------- 

@@ -28,7 +28,7 @@ function unit_step_moving() {
         
         // Also check for enemy base
         if (instance_exists(oGame.enemy_base)) {
-            var dist = point_distance(x, y, oGame.enemy_base.x, oGame.enemy_base.y);
+            var dist = point_distance(x, y, oGame.enemy_base.x, y);
             if (dist < nearest_dist) {
                 nearest_dist = dist;
                 nearest_enemy = oGame.enemy_base;
@@ -48,7 +48,7 @@ function unit_step_moving() {
         
         // Also check for player base
         if (instance_exists(oGame.player_base)) {
-            var dist = point_distance(x, y, oGame.player_base.x, oGame.player_base.y);
+            var dist = point_distance(x, y, oGame.player_base.x, y);
             if (dist < nearest_dist) {
                 nearest_dist = dist;
                 nearest_enemy = oGame.player_base;
@@ -87,7 +87,7 @@ function unit_step_attacking() {
     y = oGame.lane_y[lane_index];
     
     // Check if still in range
-    var dist = point_distance(x, y, target.x, target.y);
+    var dist = point_distance(x, y, target.x, y);
     
     if (dist > attack_range) {
         // Out of range, move back to moving state
