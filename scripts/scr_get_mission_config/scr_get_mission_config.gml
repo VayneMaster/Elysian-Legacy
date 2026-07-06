@@ -17,6 +17,7 @@ function scr_get_mission_config(_mission_id) {
 			config.player_unlock = SpecialID.ROCKS;
             config.starting_gold = 500;
             config.gold_per_second = 30;
+			config.cpu_spawn_secs = 4.0;
             config.enemy_gold_multiplier = 0.9; // Make mission 1 bit easier
             config.time_limit = -1; // No limit
             config.skill_points_reward = 3; // ← INCREASED (was 2)
@@ -35,6 +36,7 @@ function scr_get_mission_config(_mission_id) {
 			config.player_unlock = SpecialID.IRON;
             config.starting_gold = 600;
             config.gold_per_second = 35;
+			config.cpu_spawn_secs = 3.0;
             config.enemy_gold_multiplier = 1.0;
             config.time_limit = -1;
             config.skill_points_reward = 3; // ← INCREASED (was 2)
@@ -53,6 +55,7 @@ function scr_get_mission_config(_mission_id) {
 			config.player_unlock = -1;
             config.starting_gold = 800;
             config.gold_per_second = 40;
+			config.cpu_spawn_secs = 2.2;
             config.enemy_gold_multiplier = 1.8; // Overwhelming force
             config.time_limit = 180; // 3 minutes
             config.skill_points_reward = 2; // ← INCREASED (was 1)
@@ -71,6 +74,7 @@ function scr_get_mission_config(_mission_id) {
 			config.player_unlock = SpecialID.MODERN;
             config.starting_gold = 1000;
             config.gold_per_second = 45;
+			config.cpu_spawn_secs = 1.9;
             config.enemy_gold_multiplier = 1.1;
             config.time_limit = -1;
             config.skill_points_reward = 3; // ← INCREASED (was 2)
@@ -90,6 +94,7 @@ function scr_get_mission_config(_mission_id) {
             config.starting_gold = 1200;
             config.gold_per_second = 50;
             config.enemy_gold_multiplier = 1.3;
+			config.cpu_spawn_secs = 1.8;
             config.time_limit = 240; // 4 minutes
             config.skill_points_reward = 3; // ← KEPT at 3
             config.units_unlocked = [0, 1, 2, 3, 4];
@@ -107,6 +112,7 @@ function scr_get_mission_config(_mission_id) {
 			config.player_unlock = SpecialID.LIGHTNING;
             config.starting_gold = 1500;
             config.gold_per_second = 60;
+			config.cpu_spawn_secs = 1.2;
             config.enemy_gold_multiplier = 1.5;
             config.time_limit = -1;
             config.skill_points_reward = 0; // ← CHANGED: No reward (campaign complete)
@@ -126,6 +132,7 @@ function scr_get_mission_config(_mission_id) {
             config.starting_gold = 500;
             config.gold_per_second = 30;
             config.enemy_gold_multiplier = 1.0;
+			config.cpu_spawn_secs = 2.0;
             config.time_limit = -1;
             config.skill_points_reward = 1;
             config.units_unlocked = [0, 1, 2, 3, 4];

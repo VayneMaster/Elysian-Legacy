@@ -102,7 +102,10 @@ lane_y[2] = lerp(battlefield_top, battlefield_bottom, 0.82);
 //-------------------------------------------------- 
 // CPU spawn timers
 cpu_spawn_time = 0;
-cpu_spawn_interval = TARGET_FPS * 2;
+cpu_spawn_interval = TARGET_FPS * 2; // fallback
+if (instance_exists(oCampaignManager)) {
+    cpu_spawn_interval = TARGET_FPS * oCampaignManager.mission_config.cpu_spawn_secs;
+}
 
 enemy_spawn_timer = 0;
 enemy_spawn_interval = TARGET_FPS * 2;
