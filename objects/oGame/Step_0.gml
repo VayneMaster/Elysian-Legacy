@@ -122,19 +122,6 @@ if (keyboard_check_pressed(ord("E"))) selected_type = 2;
 if (keyboard_check_pressed(ord("R"))) selected_type = 3;
 if (keyboard_check_pressed(ord("T"))) selected_type = 4;
 
-// --------------------------------- 
-// Enemy spawn timer
-if (game_state == GameState.PLAYING) {
-    enemy_spawn_timer++;
-    if (enemy_spawn_timer >= enemy_spawn_interval) {
-        enemy_spawn_timer = 0;
-        var lane = irandom(lane_count - 1);
-        var lane_y_pos = lane_y[lane];
-        var u = instance_create_layer(room_width - 200, lane_y_pos, "Instances", oUnit_enemy);
-        u.lane_index = lane;
-        u.y = lane_y_pos;
-    }
-}
 
 // --------------------------------- 
 // Victory/defeat checks

@@ -107,9 +107,6 @@ if (instance_exists(oCampaignManager)) {
     cpu_spawn_interval = TARGET_FPS * oCampaignManager.mission_config.cpu_spawn_secs;
 }
 
-enemy_spawn_timer = 0;
-enemy_spawn_interval = TARGET_FPS * 2;
-
 //--------------------------------- 
 // Pause/Menu system
 global.game_paused = false;
