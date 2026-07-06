@@ -5,7 +5,7 @@ game_state = GameState.PLAYING;
 player_base = noone;
 enemy_base = noone;
 lane_count = 3;
-
+objective_timer = 0;
 //-------------------------------------------------- 
 // unattended lane logic
 lane_unattended_time = array_create(lane_count, 0);

@@ -54,6 +54,12 @@ if (game_state == GameState.PLAYING) {
 	stat_mission_timer++;
 }
 
+//---------
+//objective timer
+if (game_state == GameState.PLAYING) {
+	objective_timer++;
+}
+
 // --------------------------------- 
 // Special ability cooldown
 if (special_cd_left > 0) {
@@ -151,7 +157,15 @@ if (game_state == GameState.PLAYING) {
             var result = instance_create_depth(0, 0, -15000, oMissionResult);
             result.victory = true;
         }
-    }
+	}
+	else if (obj_type == ObjectiveType.SURVIVE_TIME) {
+		var cfg = oCampaignManager.mission_config;
+		if (cfg.time_limit > 0 && objective_timer >= cfg.time_limit * TARGET_FPS) {
+			game_state = GameState.VICTORY;
+			var result = instance_create_depth(0, 0, -15000, oMissionResult);
+			result.victory = true;
+		}
+	}
 }
 
 // --------------------------------- 

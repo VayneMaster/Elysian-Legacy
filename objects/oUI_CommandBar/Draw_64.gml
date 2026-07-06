@@ -433,6 +433,22 @@ if (oGame.game_state == GameState.VICTORY || oGame.game_state == GameState.DEFEA
     draw_text(gw * 0.5, gh * 0.5 + 20, "Press P to continue");
 }
 
+//survive timer
+if (instance_exists(oCampaignManager) && instance_exists(oGame)) {
+	if (oCampaignManager.mission_config.objective_type == ObjectiveType.SURVIVE_TIME) {
+		var secs_left = oCampaignManager.mission_config.time_limit - (oGame.objective_timer / TARGET_FPS);
+		secs_left = max(0, secs_left);
+		var m = floor(secs_left / 60);
+		var s = floor(secs_left mod 60);
+		var t_str = string(m) + ":" + (s < 10 ? "0" : "") + string(s);
+		
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_top);
+		draw_set_colour(c_white);
+		draw_text_transformed(display_get_gui_width() * 0.5, 16, "HOLD: " + t_str, 1.6, 1.6, 0);
+	}
+}
+
 // Reset draw settings
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
