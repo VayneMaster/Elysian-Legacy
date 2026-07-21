@@ -95,6 +95,7 @@ enum TitlePage {
 }
 
 enum MissionID {
+	M0_STONE_VS_STONE, //intro lvl
 	M1_STONE_VS_GREEK, //0 stone vs greek
 	M2_IRON_AGE, //after learning
 	M3_GREEK_VS_MODERN, //Greek vs modern

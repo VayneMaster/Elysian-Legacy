@@ -7,6 +7,26 @@ function scr_get_mission_config(_mission_id) {
     var config = {};
     
     switch (_mission_id) {
+		
+		case MissionID.M0_STONE_VS_STONE:
+		    config.name = "Regular Daily Life";
+		    config.description = "Life as it always has been, or is?"; 
+		    config.objective_type = ObjectiveType.DESTROY_ENEMY_BASE;
+		    config.tech_era = TechEra.STONE_AGE;
+		    config.enemy_tech_era = TechEra.STONE_AGE;
+		    config.cpu_special = SpecialID.ROCKS;
+		    config.player_unlock = SpecialID.ROCKS;
+		    config.starting_gold = 500;
+		    config.gold_per_second = 30;
+		    config.cpu_spawn_secs = 5.0;
+		    config.enemy_gold_multiplier = 0.7; // gentle tutorial opponent
+		    config.time_limit = -1;
+		    config.skill_points_reward = 2;
+		    config.units_unlocked = [0, 1];
+		    config.turrets_unlocked = [0];
+		    config.next_cutscene = -1; // both intro fights share the INTRO cutscene
+		    break;
+			
         case MissionID.M1_STONE_VS_GREEK:
             config.name = "The First Assendence";
             config.description = "The Greek warriors have found a way to travel to the Stone Age. Defeat them and claim their knowledge";

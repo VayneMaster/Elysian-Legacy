@@ -92,6 +92,7 @@
     {"id":{"name":"sBackground","path":"sprites/sBackground/sBackground.yy",},},
     {"id":{"name":"sBG_Mission1","path":"sprites/sBG_Mission1/sBG_Mission1.yy",},},
     {"id":{"name":"sBG_Mission2","path":"sprites/sBG_Mission2/sBG_Mission2.yy",},},
+    {"id":{"name":"sBG_Mission3","path":"sprites/sBG_Mission3/sBG_Mission3.yy",},},
     {"id":{"name":"sEnemy_elite","path":"sprites/sEnemy_elite/sEnemy_elite.yy",},},
     {"id":{"name":"sEnemy_hvy_mle","path":"sprites/sEnemy_hvy_mle/sEnemy_hvy_mle.yy",},},
     {"id":{"name":"sEnemy_hvy_rng","path":"sprites/sEnemy_hvy_rng/sEnemy_hvy_rng.yy",},},
