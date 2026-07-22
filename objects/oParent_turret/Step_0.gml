@@ -32,7 +32,7 @@ with (target_obj) {
 
 if (best != noone) {
 	with (best) {
-		hp -= other.damage;
+		hp -= other.damage * zone_def;
 	}
 	cooldown = rof_steps;
 }

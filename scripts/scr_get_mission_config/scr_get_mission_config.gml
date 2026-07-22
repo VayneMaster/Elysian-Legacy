@@ -24,6 +24,11 @@ function scr_get_mission_config(_mission_id) {
 		    config.skill_points_reward = 2;
 		    config.units_unlocked = [0, 1];
 		    config.turrets_unlocked = [0];
+			config.lane_zones = [
+			{ lane: 1, x1: 1350, x2: 1650, name: "RIVER CROSSING",
+			dmg_mult: 1.0, def_mult: 1.25, spd_mult: 0.6 },
+			{ lane: 0, x1: 1400, x2: 1600, name: "HIGH GROUND",
+			dmg_mult: 1.2, def_mult: 0.85, spd_mult: 1.0 } ];
 		    config.next_cutscene = -1; // both intro fights share the INTRO cutscene
 		    break;
 			

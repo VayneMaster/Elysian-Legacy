@@ -26,3 +26,8 @@ target = noone;
 
 //pos on lane
 y = oGame.lane_y[lane_index];
+
+//zone modifiers, calced ea step
+zone_dmg = 1;
+zone_def = 1;
+zone_spd = 1;

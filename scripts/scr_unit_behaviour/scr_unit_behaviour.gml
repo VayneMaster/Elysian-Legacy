@@ -4,7 +4,8 @@ function unit_step_moving() {
     var move_dir = (team == Team.PLAYER) ? 1 : -1; // Player moves right, enemy moves left
     
     // Move along x-axis (move_speed is actual pixels per step)
-    x += move_speed * move_dir;
+	scr_update_zone_mods();
+    x += move_speed * zone_spd * move_dir;
     
     // Keep aligned to lane Y position
     y = oGame.lane_y[lane_index];
@@ -82,6 +83,7 @@ function unit_step_attacking() {
         state = UnitState.MOVING;
         exit;
     }
+	scr_update_zone_mods();
     
     // Keep aligned to lane
     y = oGame.lane_y[lane_index];
@@ -104,7 +106,9 @@ function unit_step_attacking() {
         
         // Deal damage
         if (instance_exists(target) && variable_instance_exists(target, "hp")) {
-            target.hp -= damage;
+            var final_dmg = damage * zone_dmg;
+			if (variable_instance_exists(target, "zone_def")) final_dmg *= target.zone_def;
+			target.hp -= final_dmg;
             target.last_hit_team = team; // Track who hit for gold reward
             
             // TODO: Play attack sound/animation

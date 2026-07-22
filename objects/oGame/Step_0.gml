@@ -235,3 +235,13 @@ for (var i = 0; i < SKILL_COUNT; i++) {
 if (mastery_changed) {
     show_debug_message("✓ Mastery unlocked - stats updated!");
 }
+
+//----------------------------
+//lane zones - from mision conf
+lane_zones = [];
+if(instance_exists(oCampaignManager)) {
+	var _cfg = oCampaignManager.mission_config;
+	if (variable_struct_exists(_cfg, "lane_zones")) {
+		lane_zones = _cfg.lane_zones;
+	}
+}
