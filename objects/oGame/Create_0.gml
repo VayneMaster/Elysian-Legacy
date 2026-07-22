@@ -214,3 +214,13 @@ stat_mission_timer = 0;
 //post mission stats enemy
 stat_e_unit_deployed = 0;
 stat_enemy_specials_used = 0;
+
+//----------------------------
+//lane zones - from mision conf
+lane_zones = [];
+if(instance_exists(oCampaignManager)) {
+	var _cfg = oCampaignManager.mission_config;
+	if (variable_struct_exists(_cfg, "lane_zones")) {
+		lane_zones = _cfg.lane_zones;
+	}
+}

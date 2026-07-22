@@ -5,8 +5,8 @@ function scr_update_zone_mods(){
 	
 	if (!instance_exists(oGame)) exit;
 	
-	var z1 = oGame.lane.zones;
-	for (var i = 0; i < array_length(z1); i++) {
+	var zl = oGame.lane_zones;
+	for (var i = 0; i < array_length(zl); i++) {
 		var z = zl[i];
 		if (z.lane == lane_index && x >= z.x1 && x <= z.x2) {
 			zone_dmg *= z.dmg_mult;
