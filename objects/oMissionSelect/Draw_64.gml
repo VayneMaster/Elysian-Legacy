@@ -320,7 +320,8 @@ draw_set_colour(make_colour_rgb(180, 50, 50));
 draw_text(dev_btn_x, dev_btn_y_start - 18, "[DEV] Complete & play cutscene:");
 draw_set_alpha(1);
 
-var dev_labels = ["M1 Stone vs Greek",  "M2 Iron Age",
+var dev_labels = ["M0_STONE_VS_STONE",
+				  "M1 Stone vs Greek",  "M2 Iron Age",
                   "M3 Greek vs Modern", "M4 Modern vs Modern",
                   "M5 Portal Defense",  "M6 Zeus Final"];
 

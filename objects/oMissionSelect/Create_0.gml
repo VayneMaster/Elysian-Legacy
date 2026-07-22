@@ -26,23 +26,8 @@ command_y = upgrade_y + upgrade_h + 20;
 command_w = right_col_w;
 command_h = gui_h - command_y - 30;
 
-//Timeline nodes (missions) - 6 nodes
-var usable_w = map_w -160;
-var y_offsets = [-60, 20, -30, 50, -20, 10]; //change if not alligned properly
-
-node_x = array_create(MissionID.COUNT, 0);
-node_y = array_create(MissionID.COUNT, 0);
-node_r = 28;
-
-for (var i = 0; i < MissionID.COUNT; i++) {
-	node_x[i] = map_x + 80 + (i / (MissionID.COUNT - 1)) * usable_w;
-	node_y[i] = map_y + map_h * 0.5 + y_offsets[i];
-}
-
-
 //interaction
 selected_mission = 0;
-hovered_node = -1;
 current_map_mission = 0;
 //upgrade scroll
 upgrade_scroll = 0;
